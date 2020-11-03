@@ -52,12 +52,9 @@ obs = pd.DataFrame(columns = columnas)
 obs.loc[0] = respuestas
 obs = obs.astype('int32')
 prediccion = model.predict(xgb.DMatrix(obs))
-st.write(respuestas)
-st.write(prediccion)
+st.subheader("Prediccion:")
 
-#df = pd.DataFrame(prediccion[0], index=['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA'], columns=['x'])
 
-#st.pyplot(df.plot(kind='pie', subplots=True, figsize=(8, 8)))
 
 
 import matplotlib.pyplot as plt
