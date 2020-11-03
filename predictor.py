@@ -18,6 +18,6 @@ problemas = {'Los peligros para la salud: COVID-19':95, 'La crisis económica, l
 'La independencia de Cataluña':45,'Las pensiones':12,'La violencia de género':19,'La falta de acuerdos':93,
 'Poca conciencia ciudadana':94, 'Ninguno':97}
 
-aa = st.select_slider('Cual es el principal problema que tiene españa:', options=list(problemas.keys()))
+aa = st.selectbox('Cual es el principal problema que tiene españa:', options=list(problemas.keys()))
 st.write(respuestas)
 st.write(aa)
