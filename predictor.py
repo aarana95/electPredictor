@@ -9,7 +9,7 @@ respuestas = list()
 st.title('Predictor electoral')
 
 respuestas.append(st.slider('Escala de autoubicación ideologica: 1 iz - 10 dr', 1, 10, 1))
-respuestas.append(st.number_input('Introduce tu edad:', step=1))
+respuestas.append(st.number_input('Introduce tu edad:', step=1.))
 respuestas.append(st.slider('Donde ubicaría la escala de ubicación ideologica de Pablo Casado:', 1, 10, 1))
 
 
