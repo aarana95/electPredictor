@@ -4,7 +4,7 @@ import numpy as np
 import xgboost as xgb
 import pandas as pd
 from PIL import Image
-image = Image.open('imagen.svg')
+image = Image.open('imagen2.jfif')
 
 model = joblib.load("modelo.json")
 
