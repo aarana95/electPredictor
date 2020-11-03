@@ -3,10 +3,13 @@ import streamlit as st
 import numpy as np
 import xgboost as xgb
 import pandas as pd
+from PIL import Image
+image = Image.open('imagen.svg')
+
 model = joblib.load("modelo.json")
 
 respuestas = list()
-st.image('imagen.svg')
+st.image(image)
 st.title('Predictor electoral')
 
 respuestas.append(st.slider('Escala de autoubicación ideologica: 1 iz - 10 dr', 1, 10, 1))
