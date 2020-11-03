@@ -55,6 +55,21 @@ prediccion = model.predict(xgb.DMatrix(obs))
 st.write(respuestas)
 st.write(prediccion)
 
-df = pd.DataFrame(prediccion[0], index=['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA'], columns=['x'])
+#df = pd.DataFrame(prediccion[0], index=['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA'], columns=['x'])
 
-st.pyplot(df.plot(kind='pie', subplots=True, figsize=(8, 8)))
+#st.pyplot(df.plot(kind='pie', subplots=True, figsize=(8, 8)))
+
+
+import matplotlib.pyplot as plt
+
+# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+labels = ['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA']
+sizes = prediccion
+#explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.1f%%', #explode=explode,
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+st.pyplot(fig1)
