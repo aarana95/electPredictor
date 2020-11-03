@@ -12,6 +12,22 @@ respuestas.append(st.slider('Escala de autoubicación ideologica: 1 iz - 10 dr',
 respuestas.append(st.number_input('Introduce tu edad:', format='%d'))
 respuestas.append(st.slider('Donde ubicaría la escala de ubicación ideologica de Pablo Casado:', 1, 10, 1))
 
+
+
+efectos = {'Los efectos sobre la salud':1,'Los efectos sobre la economía y el empleo':2, 'Ambos por igual':3, 'Ni unos ni otros':4}
+respuestas.append(efectos[st.selectbox("En estos momentos, ¿qué le preocupa a Ud. más, los efectos de esta crisis sobre la salud, o los efectos de la crisis sobre la economía y el empleo?",
+                                       options=list(efectos.keys()))])
+
+
+
+esp_actual = {'Muy Buena':1, 'Buena':2, 'Regular':3, 'Mala':4, 'Muy mala':5}
+respuestas.append(esp_actual[st.selectbox("""Refiriéndonos a la situación económica general de España actualmente, ¿cómo la calificaría Ud.: muy buena, buena, mala o muy mala?""",
+                                       options=list(esp_actual.keys()))])
+
+
+respuestas.append(esp_actual[st.selectbox("""¿cómo la calificaría Ud. su situación económica personal: muy buena, buena, mala o muy mala?""",
+                                       options=list(esp_actual.keys()))])
+
 problemas = {'Los peligros para la salud: COVID-19':95, 'La crisis económica, los problemas de índole económica':8,
 'El paro':1, 'Los problemas políticos en general':51, 'Lo que hacen los partidos políticos':50,
 'El mal comportamiento de los/as políticos/as':13,
@@ -20,8 +36,8 @@ problemas = {'Los peligros para la salud: COVID-19':95, 'La crisis económica, l
 'La independencia de Cataluña':45,'Las pensiones':12,'La violencia de género':19,'La falta de acuerdos':93,
 'Poca conciencia ciudadana':94, 'Ninguno':97}
 
-respuestas.append(problemas[st.selectbox('Cual es el principal problema que tiene españa:', options=list(problemas.keys()))])
-respuestas.append(problemas[st.selectbox('Y el segundo:', options=list(problemas.keys()))])
+#respuestas.append(problemas[st.selectbox('Cual es el principal problema que tiene españa:', options=list(problemas.keys()))])
+#respuestas.append(problemas[st.selectbox('Y el segundo:', options=list(problemas.keys()))])
 
 
 problemas_personales = {'Los peligros para la salud: COVID-19':95, 'La crisis económica, los problemas de índole económica':8,
@@ -34,8 +50,8 @@ problemas_personales = {'Los peligros para la salud: COVID-19':95, 'La crisis ec
 'La independencia de Cataluña':45,'Las pensiones':12,'La violencia de género':19,'La falta de acuerdos':93,
 'Poca conciencia ciudadana':94, 'Ninguno':97}
 
-respuestas.append(problemas_personales[st.selectbox('Cual es el principal problema que tiene usted:', options=list(problemas_personales.keys()))])
-respuestas.append(problemas_personales[st.selectbox('Y el segundo:', options=list(problemas_personales.keys()))])
+#respuestas.append(problemas_personales[st.selectbox('Cual es el principal problema que tiene usted:', options=list(problemas_personales.keys()))])
+#respuestas.append(problemas_personales[st.selectbox('Y el segundo:', options=list(problemas_personales.keys()))])
 
 
 ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e intelectuales':2, 'Técnicos/as y profesionales de nivel medio':3,
