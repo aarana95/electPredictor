@@ -6,6 +6,7 @@ import pandas as pd
 model = joblib.load("modelo.json")
 
 respuestas = list()
+st.image('imagen.svg')
 st.title('Predictor electoral')
 
 respuestas.append(st.slider('Escala de autoubicación ideologica: 1 iz - 10 dr', 1, 10, 1))
