@@ -2,6 +2,7 @@ import joblib
 import streamlit as st
 import numpy as np
 import xgboost as xgb
+import pandas as pd
 model = joblib.load("modelo.json")
 
 respuestas = list()
