@@ -66,10 +66,10 @@ import matplotlib.pyplot as plt
 labels = ['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA']
 sizes = prediccion[0]
 #explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-
+colores = ['b', 'r', 'purple', 'orange', 'lawngreen', 'black']
 fig1, ax1 = plt.subplots()
 ax1.pie(sizes, labels=labels, autopct='%1.1f%%', #explode=explode,
-        shadow=True, startangle=90)
+        shadow=True, startangle=90, colors = colores)
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 st.pyplot(fig1)
