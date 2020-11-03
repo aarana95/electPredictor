@@ -46,6 +46,6 @@ ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e in
 respuestas.append(ocupacion[st.selectbox('¿Me puede decir cuál es su ocupación actual?:', options=list(ocupacion.keys()))])
 
 
-prediccion = model.predict(xgb.DMatrix(respuestas))
+prediccion = model.predict(xgb.DMatrix(np.array(respuestas)))
 st.write(respuestas)
 st.write(prediccion)
