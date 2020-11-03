@@ -1,6 +1,6 @@
 import joblib
 import streamlit as st
-
+import numpy as np
 xgb = joblib.load("modelo")
 
 respuestas = list()
@@ -44,4 +44,7 @@ ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e in
 'Ocupaciones elementales':9, 'Ocupaciones militares y cuerpos policiales':10, 'Otra/o':11, 'N.C.':99}
 respuestas.append(ocupacion[st.selectbox('¿Me puede decir cuál es su ocupación actual?:', options=list(ocupacion.keys()))])
 
+
+prediccion = xgb.predict(np.array(respuestas))
 st.write(respuestas)
+st.write(prediccion)
