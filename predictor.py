@@ -2,7 +2,7 @@ import joblib
 import streamlit as st
 import numpy as np
 import xgboost as xgb
-model = joblib.load("modelo")
+model = joblib.load("modelo.json")
 
 respuestas = list()
 st.title('Predictor electoral')
@@ -46,6 +46,10 @@ ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e in
 respuestas.append(ocupacion[st.selectbox('¿Me puede decir cuál es su ocupación actual?:', options=list(ocupacion.keys()))])
 
 
-prediccion = model.predict(xgb.DMatrix(np.array(respuestas)))
+columnas =['ESCIDEOL', 'EDAD', 'ESCIDEOLPOLI_2', 'P17_1', 'P17_2', 'P18_1', 'P18_2', 'CNO11']
+obs = pd.DataFrame(columns = columnas)
+obs.loc[0] = respuestas
+obs = obs.astype('int32')
+prediccion = model.predict(xgb.DMatrix(obs))
 st.write(respuestas)
 st.write(prediccion)

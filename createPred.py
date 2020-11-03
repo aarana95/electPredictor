@@ -38,5 +38,6 @@ rondas = 25
 evaluacion_new = [(test_mat_new, "eval"), (train_mat_new, "train")]
 
 modelo = xgb.train(parametros, train_mat_new, rondas, evaluacion_new)
+modelo.save_model('model.json')
 
-joblib.dump(modelo, "modelo")
+joblib.dump(modelo, "modelo.json")
