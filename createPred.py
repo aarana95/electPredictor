@@ -25,7 +25,7 @@ importancia = modelo.get_fscore()
 
 #Columnas seleccionadas en base al fscore()
 
-columnas =['ESCIDEOL', 'EDAD', 'ESCIDEOLPOLI_2', 'P17_1', 'P17_2', 'P18_1', 'P18_2', 'CNO11']
+columnas =['ESCIDEOL', 'EDAD', 'ESCIDEOLPOLI_2', 'P2', 'P15', 'P16', 'CNO11', 'RELIGION']
 new_pred = cis[columnas]
 
 X_train_new, X_test_new, y_train_new, y_test_new = train_test_split(new_pred, target, test_size=0.25, random_state=42)

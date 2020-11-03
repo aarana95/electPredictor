@@ -9,7 +9,7 @@ respuestas = list()
 st.title('Predictor electoral')
 
 respuestas.append(st.slider('Escala de autoubicación ideologica: 1 iz - 10 dr', 1, 10, 1))
-respuestas.append(st.number_input('Introduce tu edad:', format='%d'))
+respuestas.append(st.number_input('Introduce tu edad:', step=1))
 respuestas.append(st.slider('Donde ubicaría la escala de ubicación ideologica de Pablo Casado:', 1, 10, 1))
 
 
@@ -63,7 +63,11 @@ ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e in
 respuestas.append(ocupacion[st.selectbox('¿Me puede decir cuál es su ocupación actual?:', options=list(ocupacion.keys()))])
 
 
-columnas =['ESCIDEOL', 'EDAD', 'ESCIDEOLPOLI_2', 'P17_1', 'P17_2', 'P18_1', 'P18_2', 'CNO11']
+
+relg = {"católico/a practicante":1, "católico/a no practicante":2, "creyente de otra religión":3, "agnóstico/a":4, "indiferente o no creyente":5, "ateo/a":6}
+respuestas.append(relg[st.selectbox("¿Cómo se define Ud. en materia religiosa?", options=list(relg.keys()))])
+
+columnas =['ESCIDEOL', 'EDAD', 'ESCIDEOLPOLI_2', 'P2', 'P15', 'P16', 'CNO11', 'RELIGION']
 obs = pd.DataFrame(columns = columnas)
 obs.loc[0] = respuestas
 obs = obs.astype('int32')
