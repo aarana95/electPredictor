@@ -54,3 +54,7 @@ obs = obs.astype('int32')
 prediccion = model.predict(xgb.DMatrix(obs))
 st.write(respuestas)
 st.write(prediccion)
+
+df = pd.DataFrame(prediccion[0], index=['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA'], columns=['x'])
+
+df.plot(kind='pie', subplots=True, figsize=(8, 8))
