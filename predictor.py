@@ -1,7 +1,8 @@
 import joblib
 import streamlit as st
 import numpy as np
-xgb = joblib.load("modelo")
+import xgboost as xgb
+model = joblib.load("modelo")
 
 respuestas = list()
 st.title('Predictor electoral')
@@ -45,6 +46,6 @@ ocupacion = {'Directores/as y gerentes':1, 'Profesionales y científicos/as e in
 respuestas.append(ocupacion[st.selectbox('¿Me puede decir cuál es su ocupación actual?:', options=list(ocupacion.keys()))])
 
 
-prediccion = xgb.predict(np.array(respuestas))
+prediccion = model.predict(xgb.DMatrix(respuestas))
 st.write(respuestas)
 st.write(prediccion)
