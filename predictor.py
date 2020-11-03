@@ -57,4 +57,4 @@ st.write(prediccion)
 
 df = pd.DataFrame(prediccion[0], index=['PP', 'PSOE', 'PODEMOS', 'CIUDADANOS', 'VOX', 'NO VOTA'], columns=['x'])
 
-df.plot(kind='pie', subplots=True, figsize=(8, 8))
+st.pyplot(df.plot(kind='pie', subplots=True, figsize=(8, 8)))
